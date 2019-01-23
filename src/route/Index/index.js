@@ -3,6 +3,7 @@ import { Carousel } from 'antd';
 import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
+import TeachingSystem from '../../components/TeachingSystem/index.js'
 export default class Index extends React.Component{
     // constructor(props){
     //     super(props);
@@ -19,8 +20,28 @@ export default class Index extends React.Component{
                 </Carousel>
                 <div className="index_content">
                     <ContentBlock title={'教学体系'}>
-                        <div style={{height:'200px',backgroundColor:'orange'}}>
+                        <div className="teaching_system">
+                            <TeachingSystem
+                                title={'图形化编程教育'}
+                                describes={[
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介'
+                                ]}
+                            />
 
+                             <TeachingSystem
+                                title={'图形化编程教育'}
+                                describes={[
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介',
+                                    '这里是简介，这里是简介'
+                                ]}
+                            />
                         </div>
                     </ContentBlock>
 

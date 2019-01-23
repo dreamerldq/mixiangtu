@@ -1,0 +1,13 @@
+.teaching{
+    width: 500px;
+    height: 300px;
+    display: flex;
+}
+.teaching_image{
+    width: 300px;
+    background: red;
+}
+.teaching_info{
+    width: 200px;
+    background: rgb(253, 135, 0)
+}
