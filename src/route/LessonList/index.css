@@ -1,0 +1,33 @@
+.lesson_name{
+    width: 216px;
+    height: 42px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 24px;
+    position: relative;
+    margin: 10px 0 10px 30px;
+}
+.lesson_page{
+    width: 1200px;
+    margin: auto;
+}
+.lesson_name::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    border-radius: 50%;
+    display: block;
+    background-color: rgba(50, 175, 255, 1);
+    text-align: center;
+    border: 1px solid rgba(50, 175, 255, 1);
+}
+.lesson_list{
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
