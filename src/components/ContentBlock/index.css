@@ -1,0 +1,12 @@
+.block_title{
+    width: 112px;
+    height: 42px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 28px;
+    left: 120px;
+    border-bottom: 3px solid rgba(50, 175, 255, 1);
+    margin-top: 10px;
+}
+.block_body{
+    margin-top: 20px;
+}

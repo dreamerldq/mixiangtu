@@ -1,0 +1,21 @@
+.carousel_image{
+    width: 100%;
+    min-width: 1200px;
+    height: 480px;
+    background: red;    
+}
+.index_content{
+    width: 1200px;
+    margin: auto
+}
+.result_exzbit{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content_image{
+    width: 288px;
+    margin-bottom: 6px;
+    height: 190px;
+    background: rgb(175, 255, 110)
+}
