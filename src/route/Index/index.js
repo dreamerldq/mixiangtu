@@ -2,6 +2,7 @@ import React from 'react'
 import { Carousel } from 'antd';
 import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
+import LessonBlock from '../../components/LessonBlock/index.js'
 export default class Index extends React.Component{
     // constructor(props){
     //     super(props);
@@ -24,8 +25,28 @@ export default class Index extends React.Component{
                     </ContentBlock>
 
                     <ContentBlock title={'课程模式'}>
-                        <div style={{height:'200px',backgroundColor:'gray'}}>
-
+                        <div className="lesson_mode">
+                            <LessonBlock
+                                lesson={'Scratch图形教学'}    
+                                teacher={'jingda'}
+                                type={'课堂教学'}
+                                age={'6-8岁'}
+                            >
+                            </LessonBlock>
+                            <LessonBlock
+                                lesson={'Scratch图形教学'}
+                                teacher={'jingda'}
+                                type={'课堂教学'}
+                                age={'6-8岁'}
+                            >
+                            </LessonBlock>
+                            <LessonBlock
+                                lesson={'Scratch图形教学'}
+                                teacher={'jingda'}
+                                type={'课堂教学'}
+                                age={'6-8岁'}
+                            >
+                            </LessonBlock>
                         </div>
                     </ContentBlock>
 

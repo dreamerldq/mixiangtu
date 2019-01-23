@@ -19,3 +19,8 @@
     height: 190px;
     background: rgb(175, 255, 110)
 }
+.lesson_mode{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
