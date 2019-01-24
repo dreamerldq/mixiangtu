@@ -1,0 +1,11 @@
+.image{
+    width: 400px;
+    height: 300px;
+}
+.QuanJingListContainer{
+    margin: 50px auto;
+    width: 1200px;
+    text-align: center;
+    background: #fff;
+    padding: 50px;
+}

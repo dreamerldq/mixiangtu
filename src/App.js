@@ -5,7 +5,8 @@ import Header from './components/Header/index.js'
 import Footer from './components/Footer/index.js'
 import LessonDetail from './route/LessonDetail/index.js'
 import TeacherDetail from './route/TeacherDetail/index.js'
-
+import QuanJing from './route/QuanJing/index.js'
+import QuanJingList from './route/QuanJingList/index.js'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import './App.css';
 
@@ -22,7 +23,8 @@ class App extends Component {
               <Route path="/lessonlist" component={LessonList}/>
               <Route path="/lessondetail" component={LessonDetail}/>
               <Route path="/teacherdetail" component={TeacherDetail}/>
-
+              <Route path="/QuanJing/:img" component={QuanJing}/>
+              <Route path="/QuanJingList" component={QuanJingList}/>
             </Switch>
         </Router>
         </div>
