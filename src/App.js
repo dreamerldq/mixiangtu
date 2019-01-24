@@ -3,6 +3,7 @@ import Index from './route/Index/index.js'
 import LessonList from './route/LessonList/index.js'
 import Header from './components/Header/index.js'
 import Footer from './components/Footer/index.js'
+import LessonDetail from './route/LessonDetail/index.js'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import './App.css';
 
@@ -16,7 +17,8 @@ class App extends Component {
         <Router>
             <Switch>
               <Route exact path="/" component={Index}/>
-              <Route path="/lesson" component={LessonList}/>
+              <Route path="/lessonlist" component={LessonList}/>
+              <Route path="/lessondetail" component={LessonDetail}/>
             </Switch>
         </Router>
         </div>

@@ -1,0 +1,10 @@
+.detail_side{
+    width: 250px;
+    
+}
+.detail_side_item{
+    width: 100%;
+    background: brown;
+    height: 50px;
+    margin-bottom: 5px;
+}

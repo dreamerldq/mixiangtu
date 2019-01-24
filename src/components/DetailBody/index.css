@@ -1,0 +1,12 @@
+
+.body_title{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(204, 203, 203, 1);
+    border: 1px solid rgba(204, 203, 203, 1);
+    padding-left: 10px;
+}
+.body_content{
+    height: 700px;
+    background: blue;
+}
