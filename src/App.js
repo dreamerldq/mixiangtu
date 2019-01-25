@@ -7,6 +7,7 @@ import LessonDetail from './route/LessonDetail/index.js'
 import TeacherDetail from './route/TeacherDetail/index.js'
 import TeachingSystemDetail from './route/TeachingSystemDetail/index.js'
 import QuanJing from './route/QuanJing/index.js'
+import LunboManage from './route/LunboManage/index.js'
 import QuanJingList from './route/QuanJingList/index.js'
 import Login from './route/Login/index.js'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path="/QuanJingList" component={QuanJingList}/>
               <Route path="/TeachingSystemDetail" component={TeachingSystemDetail}></Route>
               <Route path="/Login" component={Login}></Route>
+              <Route path="/LunboManage" component={LunboManage}></Route>
 
             </Switch>
         </Router>

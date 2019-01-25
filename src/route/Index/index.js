@@ -5,18 +5,45 @@ import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
 import TeachingSystem from '../../components/TeachingSystem/index.js'
 export default class Index extends React.Component{
-    // constructor(props){
-    //     super(props);
-    
-    // }
+    constructor(props){
+        super(props);
+        this.handleGetList = this.handleGetList.bind(this)
+        this.state={
+            lunbos:[]
+        }
+    }
+    componentDidMount(){
+        this.handleGetList()
+    }
+    handleGetList(){
+        const lunboList = new window.AV.Query('Lunbo');
+        lunboList.find().then( (lunbos)=> {
+            const images = lunbos.map((item)=>{
+                return item._serverData.image.attributes.url
+            })
+            this.setState({
+                lunbos:images
+            })
+           
+       }).catch(function(error) {
+         console.log("轮播图请求错误", error)
+       });
+    }
     render(){
+        const { lunbos } = this.state
+        console.log("img", lunbos)
         return(
             <div>
                 <Carousel autoplay>
-                    <div className="carousel_image"><h3>1</h3></div>
-                    <div className="carousel_image"><h3>2</h3></div>
-                    <div className="carousel_image"><h3>3</h3></div>
-                    <div className="carousel_image"><h3>4</h3></div>
+                    {
+                      lunbos.map((img)=>{
+                          return(
+                            <div className="carousel_image">
+                                <img src={img}/>
+                            </div>
+                          )
+                      }) 
+                    }
                 </Carousel>
                 <div className="index_content">
                     <ContentBlock title={'教学体系'}>

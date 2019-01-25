@@ -1,0 +1,16 @@
+.add_image{
+    width: 100px;
+    height: 40px;
+    background: skyblue;
+    border-radius: 4px;
+    padding: 10px;
+    color: #fff;
+}
+.image_model{
+    display: flex;
+    flex-direction: column;
+}
+.image_model img{
+    width: 300px;
+    margin-top: 20px;
+}

@@ -4,6 +4,9 @@
     height: 480px;
     background: red;    
 }
+.carousel_image img{
+    width: 100%;
+}
 .index_content{
     width: 1200px;
     margin: auto

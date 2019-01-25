@@ -4,9 +4,6 @@ import '../../..//node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.css'
 import './index.css'
 
 class QuanJing extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   componentDidMount() {
     
     const navbar = this.getNavBar()
@@ -32,21 +29,9 @@ class QuanJing extends React.Component {
     });
   }
   getNavBar() {
-    const { quanjing, dispatch } = this.props
-    // const { imgData } = quanjing
+
     const navbar = [
-    //   {
-    //     id: 'my-button',
-    //     title: `前往${imgData.navbar.name}`,
-    //     className: 'button',
-    //     content: `前往${imgData.navbar.name}`,
-    //     onClick() {
-    //       dispatch(routerRedux.push({
-    //         pathname: `/quanjing/${imgData.navbar.path}`
-    //       }))
-    //     }
-    //   },
-      'autorotate',
+      // 'autorotate',
       'zoom',
       'markers',
       'caption',
