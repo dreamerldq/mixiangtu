@@ -1,0 +1,8 @@
+.app_login{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(250, 229, 208);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

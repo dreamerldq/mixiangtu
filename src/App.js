@@ -8,6 +8,7 @@ import TeacherDetail from './route/TeacherDetail/index.js'
 import TeachingSystemDetail from './route/TeachingSystemDetail/index.js'
 import QuanJing from './route/QuanJing/index.js'
 import QuanJingList from './route/QuanJingList/index.js'
+import Login from './route/Login/index.js'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import './App.css';
 
@@ -15,9 +16,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header></Header>
-        <div>
+       
         <Router>
             <Switch>
               <Route exact path="/" component={Index}/>
@@ -27,11 +28,13 @@ class App extends Component {
               <Route path="/QuanJing/:img" component={QuanJing}/>
               <Route path="/QuanJingList" component={QuanJingList}/>
               <Route path="/TeachingSystemDetail" component={TeachingSystemDetail}></Route>
+              <Route path="/Login" component={Login}></Route>
+
             </Switch>
         </Router>
-        </div>
+       
         <Footer></Footer>
-      </div>
+      </React.Fragment>
         
     );
   }
