@@ -17,8 +17,12 @@ export default class LessonDetail extends React.Component{
         return(
             
                 <DetailFrame>
-                    <div>
-
+                    <div className="teacher_detail_head">
+                        <img/>
+                        <div className="teacher_head_info">
+                            <div>张哒哒</div>
+                            <span>5年教龄|Scratch资深教师</span>
+                        </div>
                     </div>
                     <DetailBody
                         title={'教师详情'}
