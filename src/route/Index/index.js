@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel } from 'antd';
+import { Carousel,Input, Button } from 'antd';
 import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
@@ -111,8 +111,20 @@ export default class Index extends React.Component{
                     </ContentBlock>
 
                     <ContentBlock title={'我要报名'}>
-                        <div style={{height:'200px',backgroundColor:'skyblue'}}>
-
+                        <div className="index_baoming">
+                            <div className="qrcode">
+                                <span>扫码进群了解详情</span>
+                                <img/>
+                            </div>
+                            <div className="field">
+                                <span className="field_title">填写报名信息表</span>
+                                <Input className="field_input" placeholder="姓名"/>
+                                <Input  className="field_input" placeholder="年龄"/>
+                                <Input className="field_input" placeholder="电话"/>
+                                <span className="field_warn">*提交后我们的客服会主动联系你哦~</span>
+                                <Button className="field_button" type="primary">提交信息</Button>
+                            </div>
+                          
                         </div>
                     </ContentBlock>
                 </div>
