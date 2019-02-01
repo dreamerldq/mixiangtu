@@ -8,13 +8,7 @@ export default class TeachingSystem extends React.Component{
                 <img className="teaching_image" src={img||""}/>
                 <div className="teaching_info">
                     <span>{title}</span>
-                    <ul>
-                        {
-                            describes.map((item) => {
-                                return item
-                            })
-                        }
-                    </ul>
+                    <p>{describes}</p>
                 </div>
             </div>
         )

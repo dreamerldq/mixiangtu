@@ -11,13 +11,15 @@ export default class Index extends React.Component{
         this.state={
             lunbos:[],
             results:[],
-            LessonMode:[]
+            LessonMode:[],
+            teacherSystem:[]
         }
     }
     componentDidMount(){
         this.handleGetList()
         this.handleGetExhibition()
         this.handleGetLessonMode()
+        this.handleTeachingSystem()
     }
     handleGetExhibition = () => {
         const lunboList = new window.AV.Query('ResultExhibition');
@@ -37,7 +39,7 @@ export default class Index extends React.Component{
         const lunboList = new window.AV.Query('LessonMode');
         lunboList.find().then( (result)=> {
             
-           console.log("BBBB", result)
+           
            const LessonMode = result.map((item)=>{
                const obj = item.attributes
             return {
@@ -51,12 +53,33 @@ export default class Index extends React.Component{
             }
         
         })
-        console.log("q1111",LessonMode)
         this.setState({
             LessonMode
         })
        }).catch(function(error) {
          console.log("课程模式请求失败", error)
+       });
+    }
+    handleTeachingSystem = () => {
+        const lunboList = new window.AV.Query('TeachingSystem');
+        lunboList.find().then( (teacher)=> {
+           
+            const teacherSystem = teacher.map((item) => {
+                const obj = item.attributes
+                return{
+                    id: obj.id,
+                    system_describe: obj.system_describe,
+                    system_name: obj.system_name,
+                    system_subtitle: obj.system_subtitle,
+                    system_image: obj.system_image.attributes.url
+                }
+            })
+           
+            this.setState({
+                teacherSystem
+            })
+       }).catch(function(error) {
+         console.log("教师系统请求错误", error)
        });
     }
     handleGetList(){
@@ -75,7 +98,7 @@ export default class Index extends React.Component{
     }
     render(){
         const { lunbos } = this.state
-        console.log("img", lunbos)
+        
         return(
             <div>
                 <Carousel autoplay>
@@ -91,28 +114,21 @@ export default class Index extends React.Component{
                 </Carousel>
                 <div className="index_content">
                     <ContentBlock title={'教学体系'}>
+                   
                         <div className="teaching_system">
-                            <TeachingSystem
-                                title={'图形化编程教育'}
-                                describes={[
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介'
-                                ]}
+                            
+                        {
+                        this.state.teacherSystem.map((teacher) => {
+                            return(
+                                <TeachingSystem
+                                    key={teacher.id}
+                                    img={teacher.system_image}
+                                    title={teacher.system_name}
+                                    describes={teacher.system_describe}
                             />
-
-                             <TeachingSystem
-                                title={'图形化编程教育'}
-                                describes={[
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介',
-                                    '这里是简介，这里是简介'
-                                ]}
-                            />
+                            )
+                        })
+                    }
                         </div>
                     </ContentBlock>
 
