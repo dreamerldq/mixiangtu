@@ -9,11 +9,55 @@ export default class Index extends React.Component{
         super(props);
         this.handleGetList = this.handleGetList.bind(this)
         this.state={
-            lunbos:[]
+            lunbos:[],
+            results:[],
+            LessonMode:[]
         }
     }
     componentDidMount(){
         this.handleGetList()
+        this.handleGetExhibition()
+        this.handleGetLessonMode()
+    }
+    handleGetExhibition = () => {
+        const lunboList = new window.AV.Query('ResultExhibition');
+        lunboList.find().then( (result)=> {
+           
+           const images = result.map((item)=>{
+            return item.attributes.result_image.attributes.url
+        })
+        this.setState({
+            results:images
+        })
+       }).catch(function(error) {
+         console.log("成果展示请求错误", error)
+       });
+    }
+    handleGetLessonMode = () => { 
+        const lunboList = new window.AV.Query('LessonMode');
+        lunboList.find().then( (result)=> {
+            
+           console.log("BBBB", result)
+           const LessonMode = result.map((item)=>{
+               const obj = item.attributes
+            return {
+                age: obj.age,
+                id: obj.id,
+                lesson_mode_name: obj.lesson_mode_name,
+                mode: obj.mode,
+                teachers: obj.teachers,
+                mode_image:obj.mode_image.attributes.url
+
+            }
+        
+        })
+        console.log("q1111",LessonMode)
+        this.setState({
+            LessonMode
+        })
+       }).catch(function(error) {
+         console.log("课程模式请求失败", error)
+       });
     }
     handleGetList(){
         const lunboList = new window.AV.Query('Lunbo');
@@ -74,36 +118,30 @@ export default class Index extends React.Component{
 
                     <ContentBlock title={'课程模式'}>
                         <div className="lesson_mode">
-                            <LessonBlock
-                                lesson={'Scratch图形教学'}    
-                                teacher={'jingda'}
-                                type={'课堂教学'}
-                                age={'6-8岁'}
-                            >
-                            </LessonBlock>
-                            <LessonBlock
-                                lesson={'Scratch图形教学'}
-                                teacher={'jingda'}
-                                type={'课堂教学'}
-                                age={'6-8岁'}
-                            >
-                            </LessonBlock>
-                            <LessonBlock
-                                lesson={'Scratch图形教学'}
-                                teacher={'jingda'}
-                                type={'课堂教学'}
-                                age={'6-8岁'}
-                            >
-                            </LessonBlock>
+                        {
+                            this.state.LessonMode.map((lesson) => {
+                                return(
+                                    <LessonBlock
+                                    key={lesson.id}
+                                    img={lesson.mode_image}
+                                    lesson={lesson.lesson_mode_name}    
+                                    teacher={lesson.teachers}
+                                    type={lesson.mode}
+                                    age={lesson.age}
+                                >
+                                </LessonBlock>
+                                )
+                            })
+                        }
                         </div>
                     </ContentBlock>
 
                     <ContentBlock title={'成果展览'}>
                         <div className="result_exzbit">
-                            {(new Array(8).fill('100')).map((item)=>{
+                            {this.state.results.map((item)=>{
                                 return(
                                     <div className="content_image">
-
+                                        <img src={item}/>
                                     </div>
                                 )
                             })}

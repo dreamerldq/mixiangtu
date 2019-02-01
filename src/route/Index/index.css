@@ -22,6 +22,10 @@
     height: 190px;
     background: rgb(175, 255, 110)
 }
+.content_image img{
+    width: 100%;
+    height: 100%;
+}
 .lesson_mode{
     display: flex;
     justify-content: space-between;
@@ -85,5 +89,4 @@ font-size: 14px;
 .field_button{
     width: 360px !important;
     height: 40px !important;
-
 }

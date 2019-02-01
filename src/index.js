@@ -7,8 +7,8 @@ import 'antd/dist/antd.css'
 
 import AV from 'leancloud-storage'
 window.AV = AV
-var APP_ID = 'D47KpeY1SAseHqHFUMUrsBJr-gzGzoHsz';
-var APP_KEY = '6rB7OIHokACubffbDG62YXKH';
+var APP_ID = '7mOJxvvWv2fHld65EhztFtTb-gzGzoHsz';
+var APP_KEY = 'FWy1uNctVKlrdhOM7NT0CMNX';
 window.AV.init({
     appId: APP_ID,
     appKey: APP_KEY
