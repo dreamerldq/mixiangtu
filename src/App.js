@@ -28,7 +28,7 @@ class App extends Component {
               <Route path="/teacherdetail" component={TeacherDetail}/>
               <Route path="/QuanJing/:img" component={QuanJing}/>
               <Route path="/QuanJingList" component={QuanJingList}/>
-              <Route path="/TeachingSystemDetail" component={TeachingSystemDetail}></Route>
+              <Route path="/TeachingSystemDetail/:id" component={TeachingSystemDetail}></Route>
               <Route path="/Login" component={Login}></Route>
               <Route path="/LunboManage" component={LunboManage}></Route>
 

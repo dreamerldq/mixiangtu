@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import { Button } from 'antd'
+import {Link} from 'react-router-dom'
 import Title from 'antd/lib/skeleton/Title';
 export default class LessonBlock extends React.Component{
    render(){
@@ -16,7 +17,9 @@ export default class LessonBlock extends React.Component{
                             <span>授课模式:{type}</span>
                             <span>课程适合学习年龄:{age}</span>
                         </div>
-                        <div className="lesson_button">查看列表</div>
+                        <div className="lesson_button">
+                            <Link to="/lessondetail">查看列表</Link>
+                        </div>
                     </div>
                 </div>
            </div>

@@ -122,6 +122,7 @@ export default class Index extends React.Component{
                             return(
                                 <TeachingSystem
                                     key={teacher.id}
+                                    id={teacher.id}
                                     img={teacher.system_image}
                                     title={teacher.system_name}
                                     describes={teacher.system_describe}

@@ -7,6 +7,7 @@ import DetailFrame from '../../components/DetailFrame/index.js'
 
 export default class LessonDetail extends React.Component{
     render(){
+        console.log("AAAA", this.props)
         return(
             
                 <DetailFrame>
