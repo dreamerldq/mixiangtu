@@ -1,15 +1,13 @@
 import React from 'react'
 import './index.css'
-import { Button } from 'antd'
 import {Link} from 'react-router-dom'
-import Title from 'antd/lib/skeleton/Title';
 export default class LessonBlock extends React.Component{
    render(){
-       const {teacher,lesson,type,age, img, id} = this.props
+       const {teacher,lesson,type,age, img,lesson_mode_name, id} = this.props
        const path = {
-        pathname:`/LessonList/${id}`,
+        pathname:`/LessonDetail/${id}`,
         query:{
-            lesson, type
+            lesson_mode_name, type
         }
        }
        return(
@@ -24,7 +22,7 @@ export default class LessonBlock extends React.Component{
                             <span>课程适合学习年龄:{age}</span>
                         </div>
                         <div className="lesson_button">
-                            <Link to={path}>查看列表</Link>
+                            <Link to={path}>查看详细</Link>
                         </div>
                     </div>
                 </div>

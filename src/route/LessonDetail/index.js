@@ -48,7 +48,8 @@ export default class LessonDetail extends React.Component{
          })
     }
     handleGetTeacher = () => {
-        var Lesson = new window.AV.Object.createWithoutData('Lesson', '5c5539e30b6160004b1e1788');
+        const { id } = this.props.match.params
+        var Lesson = new window.AV.Object.createWithoutData('Lesson', id);
         var teacher = new window.AV.Query('Teacher');
         teacher.equalTo('lesson', Lesson);
         teacher.find().then((res) => {
@@ -74,7 +75,7 @@ export default class LessonDetail extends React.Component{
                     <div className="lesson_detail_head">   
                         <div className="head_left">
                             <div className="head_titles">
-                                <div className="head_title">{path_params.lesson}</div>
+                                <div className="head_title">{path_params.lesson_mode_name}</div>
                                 <div className="head_subtitle">{LessonInfo.lesson_name}</div> 
                             </div>
                             <div className="leasson_mode">
