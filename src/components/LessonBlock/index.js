@@ -5,7 +5,11 @@ import {Link} from 'react-router-dom'
 import Title from 'antd/lib/skeleton/Title';
 export default class LessonBlock extends React.Component{
    render(){
-       const {teacher,lesson,type,age, img} = this.props
+       const {teacher,lesson,type,age, img, id} = this.props
+       const path = {
+        pathname:`/LessonList/${id}`,
+       
+       }
        return(
            <div className="lesson_block">
                 <img className="lesson_image" src={img||''}/>
@@ -18,7 +22,7 @@ export default class LessonBlock extends React.Component{
                             <span>课程适合学习年龄:{age}</span>
                         </div>
                         <div className="lesson_button">
-                            <Link to="/lessondetail">查看列表</Link>
+                            <Link to={path}>查看列表</Link>
                         </div>
                     </div>
                 </div>

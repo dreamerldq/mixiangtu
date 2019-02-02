@@ -23,9 +23,9 @@ class App extends Component {
         <Router>
             <Switch>
               <Route exact path="/" component={Index}/>
-              <Route path="/lessonlist" component={LessonList}/>
+              <Route path="/lessonlist/:id" component={LessonList}/>
               <Route path="/lessondetail" component={LessonDetail}/>
-              <Route path="/teacherdetail" component={TeacherDetail}/>
+              <Route path="/teacherdetail/:id" component={TeacherDetail}/>
               <Route path="/QuanJing/:img" component={QuanJing}/>
               <Route path="/QuanJingList" component={QuanJingList}/>
               <Route path="/TeachingSystemDetail/:id" component={TeachingSystemDetail}></Route>

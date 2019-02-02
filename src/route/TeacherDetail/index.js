@@ -13,7 +13,15 @@ const sideList = [
 ]
 
 export default class LessonDetail extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            teacherInfo:{}
+        }
+    }
+
     render(){
+       
         return(
             
                 <DetailFrame>

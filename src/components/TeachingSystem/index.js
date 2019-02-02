@@ -2,8 +2,11 @@ import React from 'react'
 import './index.css'
 import {Link} from 'react-router-dom'
 export default class TeachingSystem extends React.Component{
+    
     render(){
+    
         const { img, title, describes,id } = this.props
+        console.log("AAAA", id)
         return(
             <Link to={`/TeachingSystemDetail/${id}`}>
                 <div className="teaching">

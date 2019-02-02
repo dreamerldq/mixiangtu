@@ -1,0 +1,22 @@
+.two_block{
+    width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.two_block img{
+
+width: 330px;
+height: 228px;
+
+}
+.two_block span:nth-child(1){
+    color: rgba(0, 0, 0, 1);
+    font-size: 28px;
+}
+.two_block span:nth-child(2){
+    color: rgba(113, 110, 110, 1);
+    font-size: 20px;
+}

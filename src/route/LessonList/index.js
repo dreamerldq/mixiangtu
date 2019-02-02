@@ -9,12 +9,10 @@ const datas = new Array(6).fill( {
 })
 
 export default class Index extends React.Component{
-    // constructor(props){
-    //     super(props);
     
-    // }
    
     render(){
+        
         return(
             <div className="lesson_page">
                 <div className="lesson_name">

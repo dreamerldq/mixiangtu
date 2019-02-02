@@ -44,7 +44,7 @@ export default class Index extends React.Component{
                const obj = item.attributes
             return {
                 age: obj.age,
-                id: obj.id,
+                id: item.id,
                 lesson_mode_name: obj.lesson_mode_name,
                 mode: obj.mode,
                 teachers: obj.teachers,
@@ -63,11 +63,11 @@ export default class Index extends React.Component{
     handleTeachingSystem = () => {
         const lunboList = new window.AV.Query('TeachingSystem');
         lunboList.find().then( (teacher)=> {
-           
             const teacherSystem = teacher.map((item) => {
                 const obj = item.attributes
+               
                 return{
-                    id: obj.id,
+                    id: item.id,
                     system_describe: obj.system_describe,
                     system_name: obj.system_name,
                     system_subtitle: obj.system_subtitle,
@@ -78,6 +78,7 @@ export default class Index extends React.Component{
             this.setState({
                 teacherSystem
             })
+            
        }).catch(function(error) {
          console.log("教师系统请求错误", error)
        });
@@ -139,6 +140,7 @@ export default class Index extends React.Component{
                             this.state.LessonMode.map((lesson) => {
                                 return(
                                     <LessonBlock
+                                    id={lesson.id}
                                     key={lesson.id}
                                     img={lesson.mode_image}
                                     lesson={lesson.lesson_mode_name}    
