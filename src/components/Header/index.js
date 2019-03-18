@@ -40,7 +40,9 @@ export default class Header extends React.Component{
         return(
             <div className="app_header">
                 <ul className="menu_ul">
-                    <li className="logo">米想兔</li>
+                    <li className="logo">
+                        <img src={require('../../mixiangtu1.png')}/>
+                    </li>
                     {
                         menu.map((item)=>{
                             return(
