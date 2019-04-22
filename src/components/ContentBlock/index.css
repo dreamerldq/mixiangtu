@@ -6,6 +6,7 @@
     left: 120px;
     border-bottom: 3px solid rgba(50, 175, 255, 1);
     margin-top: 10px;
+    font-weight: bold;
 }
 .block_body{
     margin-top: 20px;

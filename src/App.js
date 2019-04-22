@@ -10,7 +10,7 @@ import QuanJing from './route/QuanJing/index.js'
 import LunboManage from './route/LunboManage/index.js'
 import QuanJingList from './route/QuanJingList/index.js'
 import Login from './route/Login/index.js'
-import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route,Switch,Redirect } from 'react-router-dom'
 import './App.css';
 
 
@@ -22,7 +22,8 @@ class App extends Component {
        
         <Router>
             <Switch>
-              <Route exact path="/" component={Index}/>
+              <Route exact path="/" render={() => <Redirect to="/index"/>}></Route>
+              <Route path="/index" component={Index}/>
               <Route path="/lessonlist/:id" component={LessonList}/>
               <Route path="/lessondetail" component={LessonDetail}/>
               <Route path="/teacherdetail/:id" component={TeacherDetail}/>

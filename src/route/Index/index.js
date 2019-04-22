@@ -4,6 +4,8 @@ import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
 import TeachingSystem from '../../components/TeachingSystem/index.js'
+import { Link } from 'react-router-dom'
+
 export default class Index extends React.Component{
     constructor(props){
         super(props);
@@ -87,7 +89,8 @@ export default class Index extends React.Component{
         const lunboList = new window.AV.Query('Lunbo');
         lunboList.find().then( (lunbos)=> {
             const images = lunbos.map((item)=>{
-                return item._serverData.image.attributes.url
+                console.log(item)
+                return {src:item._serverData.image.attributes.url, lesson:item._serverData.LessonDetail}
             })
             this.setState({
                 lunbos:images
@@ -101,19 +104,19 @@ export default class Index extends React.Component{
         const { lunbos } = this.state
         
         return(
-            <div>
+            <div id="index_top">
                 <Carousel autoplay>
                     {
                       lunbos.map((img)=>{
                           return(
                             <div className="carousel_image">
-                                <img src={img}/>
+                               <Link to={`/LessonDetail/${img.lesson}`}> <img src={img.src}/></Link>
                             </div>
                           )
                       }) 
                     }
                 </Carousel>
-                <div className="index_content">
+                <div  id="teachingsystem_top"  className="index_content">
                     <ContentBlock title={'教学体系'}>
                    
                         <div className="teaching_system">
@@ -135,7 +138,7 @@ export default class Index extends React.Component{
                     </ContentBlock>
 
                     <ContentBlock title={'课程模式'}>
-                        <div className="lesson_mode">
+                        <div id="lessonmode_top" className="lesson_mode">
                         {
                             this.state.LessonMode.map((lesson) => {
                                 return(
@@ -156,7 +159,7 @@ export default class Index extends React.Component{
                     </ContentBlock>
 
                     <ContentBlock title={'成果展览'}>
-                        <div className="result_exzbit">
+                        <div id="resultexzbit_top" className="result_exzbit">
                             {this.state.results.map((item)=>{
                                 return(
                                     <div className="content_image">
@@ -168,7 +171,7 @@ export default class Index extends React.Component{
                     </ContentBlock>
 
                     <ContentBlock title={'我要报名'}>
-                        <div className="index_baoming">
+                        <div id="baoming_top" className="index_baoming">
                             <div className="qrcode">
                                 <span>扫码进群了解详情</span>
                                 <img/>
