@@ -3,9 +3,9 @@ import { Carousel,Input, Button } from 'antd';
 import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
+import Robet from '../../components/Robet/index.js'
 import TeachingSystem from '../../components/TeachingSystem/index.js'
 import { Link } from 'react-router-dom'
-
 export default class Index extends React.Component{
     constructor(props){
         super(props);
@@ -14,7 +14,8 @@ export default class Index extends React.Component{
             lunbos:[],
             results:[],
             LessonMode:[],
-            teacherSystem:[]
+            teacherSystem:[],
+            robet: false
         }
     }
     componentDidMount(){
@@ -188,6 +189,10 @@ export default class Index extends React.Component{
                         </div>
                     </ContentBlock>
                 </div>
+                <div onClick={() => this.setState({robet: true})} className="robet-fixed"></div>
+                {
+                    this.state.robet && <Robet/>
+                }
             </div>
         )
     }

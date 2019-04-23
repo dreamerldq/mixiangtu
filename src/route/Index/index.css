@@ -90,3 +90,11 @@ font-size: 14px;
     width: 360px !important;
     height: 40px !important;
 }
+.robet-fixed{
+    position: fixed;
+    bottom: 200px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: red;
+}
