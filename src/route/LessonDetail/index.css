@@ -65,3 +65,9 @@ font-size: 36px;
     border-radius: 50%;
     border: solid 1px pink;
 }
+.input-group{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-around;
+}

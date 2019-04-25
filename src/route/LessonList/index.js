@@ -19,13 +19,15 @@ export default class Index extends React.Component{
         var lesson = new window.AV.Query('Lesson');
         lesson.equalTo('lesson_mode', LessonMode);
         lesson.find().then((obj) => {
-            console.log("zxxxx", obj)
            
             const lessons = obj.map((res) => {
                 return{
                 id: res.id,
                 lesson_image: res.get('lesson_image').attributes.url,
                 lesson_name: res.get('lesson_name'),
+                mode:res.get('type'),
+                lesson_mode_name: res.get('lesson_mode_name'),
+                teacher:res.get('teacher'),
                 people_count: res.get('people_count'),
                 lesson_time: res.get('lesson_time'),
                 lesson_detail: res.get('lesson_detail')
@@ -42,7 +44,7 @@ export default class Index extends React.Component{
         return(
             <div className="lesson_page">
                 <div className="lesson_name">
-                    {path_params.lesson}
+                    {(this.state.lessons[0] || {}).lesson_mode_name}
                 </div>
                 <div className="lesson_list">
                 {
@@ -52,9 +54,9 @@ export default class Index extends React.Component{
                                 img={item.lesson_image}
                                 key={item.id}
                                 id={item.id}
-                                lesson_mode_name={path_params.lesson}
+                                mode={item.mode}
                                 lesson={item.lesson_name}    
-                                teacher={'未知'}
+                                teacher={item.teacher}
                                 type={path_params.type}
                                 age={item.lesson_time}
                             >
