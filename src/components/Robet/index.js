@@ -5,7 +5,8 @@ export default class Robet extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            question: ''
+            question: '',
+            answer: ''
         }
     }
     handleInput = (e) => {
@@ -15,20 +16,32 @@ export default class Robet extends React.Component{
         })
     }
     handleQuestion = () => {
-        axios.post('http://openapi.tuling123.com/openapi/api/v2',{
-            reqType:0,
-            perception:{
-                inputText:{
-                    text: this.state.question
+        axios.post('/openapi/api/v2',
+            {
+                reqType:0,
+                perception:{
+                    inputText:{
+                        text: this.state.question
+                    },
+                    selfInfo: {
+                        location: {
+                            city: "北京",
+                            province: "北京",
+                            street: "信息路"
+                        }
+                    }
+                },
+                userInfo: {
+                    apiKey: "a477563e26b049acb22dde86ad00b20b",
+                    userId: "344383"
                 }
-            },
-            userInfo: {
-                apiKey: "a477563e26b049acb22dde86ad00b20b",
-                // userId: "1299202444@qq.com"
+    
             }
-
-        }).then((res)=>{
-            console.log("返回值", res)
+        ).then(({data})=>{
+            console.log("返回值", data)
+            this.setState({
+                answer: data.results[0].values.text
+            })
         })
     }
     render(){
@@ -36,6 +49,9 @@ export default class Robet extends React.Component{
             <div className="robet">
                 <input onChange={this.handleInput} value={this.state.question}></input>
                 <button onClick={this.handleQuestion}>发送</button>
+                <div style={{color:'red'}}>
+                    {this.state.answer}
+                </div>
             </div>
         )
     }
