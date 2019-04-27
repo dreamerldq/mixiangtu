@@ -1,0 +1,65 @@
+.robot-container{
+    width: 1200px;
+    margin: 50px auto;
+border: 2px solid rgba(187, 187, 187, 1);
+}
+.robot-header{
+    width: 100%;
+    height: 110px;
+    border-bottom: 1px solid rgb(187, 187, 187)
+}
+.robot-body{
+    width: 100%;
+    display: flex;
+}
+.robot-question{
+    width: 310px;
+    border-left: 1px solid rgb(187, 187, 187)
+}
+.robot-duihua{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  
+}
+.robot-display{
+    height: 490px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    display: flex;
+    flex-direction: column;
+}
+.robot-message{
+    height: 170px;
+    position: relative;
+}
+.robot-body button{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.answer{
+    color: #ffffff;
+    width: 100%;
+    text-align: left;
+}
+.question{
+    color: #ffffff;
+    width: 100%;
+    text-align: right;
+}
+.question span{
+    background: #0364f5;
+    /* display: block; */
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px;
+
+}
+.answer span{
+    background: rgb(252, 85, 85);
+    /* display: block; */
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px;
+
+}

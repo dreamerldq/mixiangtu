@@ -10,6 +10,7 @@ import QuanJing from './route/QuanJing/index.js'
 import LunboManage from './route/LunboManage/index.js'
 import QuanJingList from './route/QuanJingList/index.js'
 import Login from './route/Login/index.js'
+import Robot from './route/robot/index.js'
 import { BrowserRouter as Router, Route,Switch,Redirect } from 'react-router-dom'
 import './App.css';
 
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path="/QuanJingList" component={QuanJingList}/>
               <Route path="/TeachingSystemDetail/:id" component={TeachingSystemDetail}></Route>
               <Route path="/Login" component={Login}></Route>
+              <Route path="/robot" component={Robot}></Route>
               <Route path="/LunboManage" component={LunboManage}></Route>
 
             </Switch>
