@@ -16,6 +16,14 @@ border: 2px solid rgba(187, 187, 187, 1);
     width: 310px;
     border-left: 1px solid rgb(187, 187, 187)
 }
+.robot-question p{
+    height: 20px;
+    background: #f862ec;
+    padding: 0 10px;
+    margin: 10px 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
 .robot-duihua{
     flex: 1;
     display: flex;
@@ -27,6 +35,8 @@ border: 2px solid rgba(187, 187, 187, 1);
     border-bottom: 1px solid rgb(187, 187, 187);
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    overflow: scroll;
 }
 .robot-message{
     height: 170px;
@@ -41,12 +51,15 @@ border: 2px solid rgba(187, 187, 187, 1);
     color: #ffffff;
     width: 100%;
     text-align: left;
+    margin: 5px;
 }
 .question{
     color: #ffffff;
     width: 100%;
     text-align: right;
+    margin: 5px;
 }
+
 .question span{
     background: #0364f5;
     /* display: block; */
