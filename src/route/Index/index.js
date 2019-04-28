@@ -1,10 +1,11 @@
 import React from 'react'
-import { Carousel,Input, Button } from 'antd';
+import { Carousel,Input, Button,message } from 'antd';
 import './index.css'
 import ContentBlock from '../../components/ContentBlock/index.js'
 import LessonBlock from '../../components/LessonBlock/index.js'
 import TeachingSystem from '../../components/TeachingSystem/index.js'
 import { Link } from 'react-router-dom'
+// import qrcode from '../../image/qrcode.png'
 export default class Index extends React.Component{
     constructor(props){
         super(props);
@@ -14,6 +15,9 @@ export default class Index extends React.Component{
             results:[],
             LessonMode:[],
             teacherSystem:[],
+            name:'',
+            age:'',
+            phone: ''
         }
     }
     componentDidMount(){
@@ -84,6 +88,22 @@ export default class Index extends React.Component{
          console.log("教师系统请求错误", error)
        });
     }
+    
+    handleBaoming =() => {
+        const {name,age,phone} = this.state
+        if(name && age && phone){
+            this.setState({
+                visible: false
+            })
+            message.success('报名成功');
+        }
+        this.setState({
+            name: '',
+            age: '',
+            phone: ''
+        })
+       
+    }
     handleGetList(){
         const lunboList = new window.AV.Query('Lunbo');
         lunboList.find().then( (lunbos)=> {
@@ -100,7 +120,7 @@ export default class Index extends React.Component{
        });
     }
     render(){
-        const { lunbos } = this.state
+        const { lunbos,name,age,phone } = this.state
         
         return(
             <div id="index_top">
@@ -173,15 +193,15 @@ export default class Index extends React.Component{
                         <div id="baoming_top" className="index_baoming">
                             <div className="qrcode">
                                 <span>扫码进群了解详情</span>
-                                <img/>
+                                <img src={require('../../image/qrcode.jpg')}/>
                             </div>
                             <div className="field">
                                 <span className="field_title">填写报名信息表</span>
-                                <Input className="field_input" placeholder="姓名"/>
-                                <Input  className="field_input" placeholder="年龄"/>
-                                <Input className="field_input" placeholder="电话"/>
+                                <Input className="field_input" value={name} onChange={(e) => this.setState({name: e.target.value})} placeholder="姓名"></Input>
+                                <Input className="field_input" value={age} onChange={(e) => this.setState({age: e.target.value})} placeholder="年龄"></Input>
+                                <Input className="field_input" value={phone} onChange={(e) => this.setState({phone: e.target.value})} placeholder="电话"></Input>
                                 <span className="field_warn">*提交后我们的客服会主动联系你哦~</span>
-                                <Button className="field_button" type="primary">提交信息</Button>
+                                <Button onClick={this.handleBaoming} className="field_button" type="primary">提交信息</Button>
                             </div>
                           
                         </div>

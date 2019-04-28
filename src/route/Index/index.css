@@ -43,8 +43,7 @@
     padding: 20px 0;
 }
 .qrcode img{
-    width: 240px;
-    height: 240px;
+    width: 50%;
     border: 1px solid orange;
 }
 .qrcode span{
