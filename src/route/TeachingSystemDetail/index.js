@@ -15,9 +15,7 @@ export default class LessonDetail extends React.Component{
     componentDidMount(){
         const { id } = this.props.match.params
         const data = new window.AV.Query('TeachingSystem');
-        console.log("QQQQ", id)
         data.get(id).then( (res)=> {
-            console.log("RES", res)
             const obj = res.attributes
             const teacherInfo = {
                
@@ -38,7 +36,7 @@ export default class LessonDetail extends React.Component{
                 <DetailFrame>
                     <div className="two_block">
                         <img src={teacherInfo.system_image}/>
-                        <div>
+                        <div className="teacherinfo">
                             <span>{teacherInfo.system_name}</span>
                             <span>{teacherInfo.system_subtitle}</span>
                         </div>

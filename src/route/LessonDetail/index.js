@@ -23,13 +23,19 @@ export default class LessonDetail extends React.Component{
                 visible: false,
                 name:'',
                 age:'',
-                phone:''
+                phone:'',
+                lessons:[]
             
         }
     }
     componentDidMount(){
         this.handleGetLesson()
         this.handleGetTeacher()
+        const lessons = JSON.parse(window.localStorage.getItem('lessons'))
+        this.setState({
+            lessons
+        })
+
     }
     handleOk =() => {
         const {name,age,phone} = this.state
@@ -151,7 +157,7 @@ export default class LessonDetail extends React.Component{
 
                     </DetailBody>
                     <DetailSide 
-                        list={sideList} 
+                        list={this.state.lessons} 
                     ></DetailSide>
                 </DetailFrame>
             

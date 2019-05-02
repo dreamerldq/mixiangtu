@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './index.css'
 export default class DetailSide extends React.Component{
     render(){
@@ -8,8 +9,8 @@ export default class DetailSide extends React.Component{
                 {
                     (list || []).map((item,key) => {
                         return(
-                            <div className="detail_side_item">
-                                {item}
+                            <div key={item.id} className="detail_side_item">
+                               <Link to={`/LessonDetail/${item.id}`}>{item.lesson_name}</Link> 
                             </div>
                         )
                     })

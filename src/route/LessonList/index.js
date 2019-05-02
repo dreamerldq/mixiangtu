@@ -36,6 +36,7 @@ export default class Index extends React.Component{
             this.setState({
                 lessons
             })
+            window.localStorage.setItem('lessons',JSON.stringify(lessons))
 });
     }
     render(){
@@ -55,6 +56,7 @@ export default class Index extends React.Component{
                                 key={item.id}
                                 id={item.id}
                                 mode={item.mode}
+                                lessons={this.state.lessons}
                                 lesson={item.lesson_name}    
                                 teacher={item.teacher}
                                 type={path_params.type}

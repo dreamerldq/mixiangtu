@@ -8,9 +8,16 @@
     margin-bottom: 5px;
     line-height: 50px;
     background-color: rgba(50, 175, 255, 1);
-    color: rgba(16, 16, 16, 1);
+    color: #ffffff;
     font-size: 18px;
     text-align: center;
     border: 1px solid rgba(187, 187, 187, 1);
 
+}
+.detail_side_item a{
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover{
+    color: #cfcfcf
 }

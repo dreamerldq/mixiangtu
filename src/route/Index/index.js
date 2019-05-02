@@ -119,6 +119,11 @@ export default class Index extends React.Component{
          console.log("轮播图请求错误", error)
        });
     }
+    handleTop = () =>{
+        console.log("aaaa")
+       window.document.body.scrollTop = 0
+    }
+   
     render(){
         const { lunbos,name,age,phone } = this.state
         
@@ -207,7 +212,10 @@ export default class Index extends React.Component{
                         </div>
                     </ContentBlock>
                 </div>
-                <div onClick={() => window.location.href='/robot'} className="robet-fixed"></div>
+                <div className="robet-fixed">
+                <img onClick={() => window.location.href='/robot'}  src={require('../../image/kefu.png')}/>
+                
+                </div>
                
             </div>
         )
