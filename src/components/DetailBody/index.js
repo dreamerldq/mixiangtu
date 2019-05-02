@@ -10,14 +10,7 @@ export default class DetailBody extends React.Component{
         return(
             <div className="detail_body">
                 <div className="body_title">{title}</div>
-                <div className="body_content">
-                    {(content || '').split('/n').map((item) => {
-                        // return <p>{item.replace(reg,'')}</p>
-                        console.log(item,reg.test(item), typeof(item))
-                        return reg.test(item) ? <a>111</a> : <p>{item}</p>
-                    })}
-                    {/* {content} */}
-                </div>
+                <div className="body_content" dangerouslySetInnerHTML={{ __html: content}}></div>
             </div>
         )
     }
