@@ -6,7 +6,6 @@ export default class TeachingSystem extends React.Component{
     render(){
     
         const { img, title, describes,id } = this.props
-        console.log("AAAA", id)
         return(
             <Link to={`/TeachingSystemDetail/${id}`}>
                 <div className="teaching">

@@ -92,7 +92,7 @@ export default class Robot extends React.Component {
             return (
                 <div className="robot-container">
                     <div className='robot-header'>
-
+                    <img src={require('../../mixiangtu1.png')}/>
                     </div>
                     <div className="robot-body">
 
