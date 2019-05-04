@@ -4,10 +4,9 @@
     width: 100%;
     background-color: rgba(249, 248, 248, 1);
     text-align: center;
-    position: fixed;
-    bottom: 0;
+
     color: rgba(154, 155, 158, 1);
     font-size: 16px;
-    line-height: 80px
+    line-height: 80px;
 
 }

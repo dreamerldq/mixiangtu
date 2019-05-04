@@ -213,7 +213,7 @@ export default class Index extends React.Component{
                     </ContentBlock>
                 </div>
                 <div className="robet-fixed">
-                <img onClick={() => window.location.href='/robot'}  src={require('../../image/kefu.png')}/>
+               <Link to="/robot"><img  src={require('../../image/kefu.png')}/></Link> 
                 
                 </div>
                
