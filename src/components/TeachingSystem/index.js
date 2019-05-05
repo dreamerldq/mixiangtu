@@ -5,14 +5,14 @@ export default class TeachingSystem extends React.Component{
     
     render(){
     
-        const { img, title, describes,id } = this.props
+        const { img, title, describes,id,subtitle } = this.props
         return(
             <Link to={`/TeachingSystemDetail/${id}`}>
                 <div className="teaching">
                 <img className="teaching_image" src={img||""}/>
                 <div className="teaching_info">
                     <span>{title}</span>
-                    <p>{describes}</p>
+                    <p>{subtitle}</p>
                 </div>
             </div>
             </Link>

@@ -40,10 +40,17 @@ export default class LessonDetail extends React.Component{
     handleOk =() => {
         const {name,age,phone} = this.state
         if(name && age && phone){
+            let Baoming = window.AV.Object.extend('Baoming');
+            let baoming = new Baoming();
+            baoming.set('name',name);
+            baoming.set('age',age)
+            baoming.set('phone',phone)
+            baoming.save().then((res) => {
+                message.success('报名成功');
+            })
             this.setState({
                 visible: false
             })
-            message.success('报名成功');
         }
        
     }

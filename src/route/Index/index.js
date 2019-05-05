@@ -92,10 +92,18 @@ export default class Index extends React.Component{
     handleBaoming =() => {
         const {name,age,phone} = this.state
         if(name && age && phone){
+            let Baoming = window.AV.Object.extend('Baoming');
+            let baoming = new Baoming();
+            baoming.set('name',name);
+            baoming.set('age',age)
+            baoming.set('phone',phone)
+            baoming.save().then((res) => {
+                message.success('报名成功');
+            })
             this.setState({
                 visible: false
             })
-            message.success('报名成功');
+           
         }
         this.setState({
             name: '',
@@ -154,6 +162,7 @@ export default class Index extends React.Component{
                                     img={teacher.system_image}
                                     title={teacher.system_name}
                                     describes={teacher.system_describe}
+                                    subtitle={teacher.system_subtitle}
                             />
                             )
                         })

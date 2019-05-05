@@ -9,7 +9,13 @@ border: 2px solid rgba(187, 187, 187, 1);
     border-bottom: 1px solid rgb(187, 187, 187);
     display: flex;
     align-items: center;
-    background: black;
+}
+.robot-header img{
+    width: 100px;
+}
+.robot-header span{
+    font-weight: bold;
+    font-size: 18px;
 }
 .robot-body{
     width: 100%;
@@ -21,7 +27,7 @@ border: 2px solid rgba(187, 187, 187, 1);
 }
 .robot-question p{
     height: 20px;
-    background: #f862ec;
+    background: #048af8;
     padding: 0 10px;
     margin: 10px 10px;
     color: #ffffff;

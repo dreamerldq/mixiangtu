@@ -88,11 +88,11 @@ export default class Robot extends React.Component {
             })
         }
         render() {
-            console.log("qqq", this.state.answer)
             return (
                 <div className="robot-container">
                     <div className='robot-header'>
-                    <img src={require('../../mixiangtu1.png')}/>
+                    <img src={require('../../logo.png')}/>
+                    <span>小兔智能在线客服</span>
                     </div>
                     <div className="robot-body">
 
