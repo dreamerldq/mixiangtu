@@ -26,7 +26,8 @@ class App extends Component {
               <Route exact path="/" render={() => <Redirect to="/index"/>}></Route>
               <Route path="/index" component={Index}/>
               <Route path="/lessonlist/:id" component={LessonList}/>
-              <Route path="/lessondetail" component={LessonDetail}/>
+              {/* <Route path="/lessondetail" component={LessonDetail}/> */}
+              <Route path="/lessondetail/:id?" component={LessonDetail}/>
               <Route path="/teacherdetail/:id" component={TeacherDetail}/>
               <Route path="/QuanJing/:img" component={QuanJing}/>
               <Route path="/QuanJingList" component={QuanJingList}/>

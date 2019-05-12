@@ -29,14 +29,20 @@ export default class LessonDetail extends React.Component{
         }
     }
     componentDidMount(){
-        this.handleGetLesson()
+        const id = this.props.match.params.id
+        this.handleGetLesson(id)
         this.handleGetTeacher()
         const lessons = JSON.parse(window.localStorage.getItem('lessons'))
         this.setState({
             lessons
         })
-
     }
+    componentWillReceiveProps(nextprops){
+        if(nextprops.match.params.id !== this.props.match.params.id){
+            this.handleGetLesson(this.props.match.params.id)
+        }
+    }
+
     handleOk =() => {
         const {name,age,phone} = this.state
         if(name && age && phone){
@@ -65,12 +71,10 @@ export default class LessonDetail extends React.Component{
         })
         
     }
-    handleGetLesson = () => {
+    handleGetLesson = (id) => {
         const data = new window.AV.Query('Lesson');
-       
-        data.get('5c5539e30b6160004b1e1788').then( (res)=> {
-           
-            // const obj = res.attributes
+        
+        data.get(id).then( (res)=> {
             const LessonInfo = {
                
                 lesson_image: res.get('lesson_image').attributes.url,
@@ -81,7 +85,6 @@ export default class LessonDetail extends React.Component{
                 lesson_detail: res.get('lesson_detail'),
                 type: res.get('type')
             }
-            console.log("AAA", LessonInfo)
             this.setState({
                 LessonInfo
             })
